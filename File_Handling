@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+   FILE *fr;
+   char s[40];
+   int n;
+   fr = fopen("welcome.txt", "w");
+   printf("Enter a string and a number");
+   scanf("%s%d", s, &n);
+   fprintf(fr, "%s %d", s, n);
+   fclose(fr);
+   fr = fopen("welcome.txt", "r");
+   fscanf(fr, "%s%d", s, &n);
+   printf("%s %d", s, n);
+   fclose(fr);
+   return 0;
+}
